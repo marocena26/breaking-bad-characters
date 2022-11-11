@@ -1,18 +1,13 @@
+@import 'core/variables';
 @import 'core/reset';
-/*@import 'core/variables';
+@import 'layout/header';
+@import 'layout/section-characters';
+@import 'layout/section-favourites';
+@import 'layout/footer';
+/*
 @import 'components/code';
 @import 'components/links';
 @import 'layout/page';
-@import 'layout/header';
-@import 'layout/footer';
+
 @import 'pages/index';
 */
-
-.work {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    font-size: 50px;
-}
