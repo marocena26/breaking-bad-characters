@@ -52,6 +52,6 @@ renderCharactersList();
 fetch('https://breakingbadapi.com/api/characters')
   .then((response) => response.json())
   .then((jsonData) => {
-    myCharactersList = jsonData; //mi array vacío es igual a jasonData, todos los elementos que cogemos de la URL se meten en él.
+    myCharactersList = jsonData; //Guardo la informacion que me da el JSON en mi variable global, en este array vacío se guardarán todos los elementos que he seleccionado de la API(foto, nombre y estado).
     renderCharactersList();//los mando pintar.
   });
