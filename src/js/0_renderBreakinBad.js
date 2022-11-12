@@ -13,22 +13,32 @@ let myFavouritesList = []; //Array vacío. Necesitamos una variable (let) que gu
 
 //--------------------FUNCIONES--------------------//
 
-function renderCharacter(character) {
-  let html = `
-    <li><img src="${character.img}" alt=""></li>
-    <li>${character.name}</li>
-    <li>${character.status}</li>`;
-  return html;
+//Función para pintar cada UNO de los elementos: cada personaje con su correspondiente foto, nombre y estado.
+
+function renderCharacter(character) { //el parámetro 'character' obtiene la información de renderCharacter(myCharactersList[i]). Le pido que recorra el índice de cada uno de los elementos del array que estaba vacío y que llenamos con la información que nos da el servidor.
+
+  let liElement = //Variable vacía dónde voy a ir añadiendo todo lo que me devuelve la función.
+
+    `<li>
+    <article>
+        <img src="${character.img}" alt="" class="characters__ul--img">
+        <h3 class="characters__ul--name">${character.name}</h3>
+        <p class="characters__ul--status">${character.status}</p>
+    </article>
+    </li>`;
+
+  return liElement;
 }
 
+//Función para que pinte todos los elementos del array.
 function renderCharactersList () {
-  let html = '';
+  let liElement = '';
 
-  for (let i = 0; i < myCharactersList.length; i++) {
-    html += renderCharacter(myCharactersList[i]);
+  for (let i = 0; i < myCharactersList.length; i++) { ///i representa cada elemento del array, en este caso cada personaje con su información correspondiente.
+    liElement += renderCharacter(myCharactersList[i]);
   }
 
-  charactersList.innerHTML = html;
+  charactersList.innerHTML = liElement; //Todo lo acumulado en la variable se pinta en mi array vacío de personajes.
 
   //addShipsListerers();
 }
@@ -42,7 +52,6 @@ renderCharactersList();
 fetch('https://breakingbadapi.com/api/characters')
   .then((response) => response.json())
   .then((jsonData) => {
-    myCharactersList = jsonData;
-
-    renderCharactersList();
+    myCharactersList = jsonData; //mi array vacío es igual a jasonData, todos los elementos que cogemos de la URL se meten en él.
+    renderCharactersList();//los mando pintar.
   });

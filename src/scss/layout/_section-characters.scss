@@ -1,12 +1,29 @@
-// .section__characters {
+.characters {
+    
+     &__title{
+        font-size: 25px;
+     };
 
-//     &--title{};
+     &__ul{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
 
-//     &--ul{
-//         display: flex;
-//         flex-direction: row;
-//         flex-wrap: wrap;
-//         justify-content: flex-start;
-//         align-items: center;
-//     };
-// }
+        &--img{
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        };
+
+        &--name{};
+
+        &--status{};
+
+     };
+}
