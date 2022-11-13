@@ -95,7 +95,6 @@ function handleClickFavourites(event) {
   renderFavouritesList();
 }
 
-
 searchBtn.addEventListener('click', (event) => {
   event.preventDefault();
   const userSearch = searchInput.value.toLowerCase();
@@ -103,7 +102,6 @@ searchBtn.addEventListener('click', (event) => {
   );
   renderFilteredCharacters ();
 });
-
 
 //----CÓDIGO QUE SE EJECUTA AL CARGAR LA PÁGINA----//
 
