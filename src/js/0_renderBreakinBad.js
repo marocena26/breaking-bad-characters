@@ -83,17 +83,23 @@ function renderFilteredCharacters () {
 
 //---------------------EVENTOS---------------------//
 
+//Evento para pulsar encima del personaje.
+
 function handleClickFavourites(event) {
   event.currentTarget.classList.toggle('selected');
   const selectFavouriteObj = myCharactersList.find((eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id));
   const myFavouriteObj = myFavouritesList.findIndex((eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id));
   if (myFavouriteObj === -1) {
     myFavouritesList.push(selectFavouriteObj);
+    localStorage.setItem('myFavouritesList', JSON.stringify(myFavouritesList));
   } else {
     myFavouritesList.splice(myFavouriteObj, 1);
+    localStorage.setItem('myFavouritesList', JSON.stringify(myFavouritesList));
   }
   renderFavouritesList();
 }
+
+//Evento para buscar nombre del personaje.
 
 searchBtn.addEventListener('click', (event) => {
   event.preventDefault();
@@ -113,3 +119,9 @@ fetch('https://breakingbadapi.com/api/characters')
     myCharactersList = jsonData;
     renderCharactersList();
   });
+
+const favouritesListLS = JSON.parse(localStorage.getItem('myFavouritesList'));
+if (favouritesListLS !== null) {
+  myFavouritesList = favouritesListLS;
+  renderFavouritesList ();
+}
