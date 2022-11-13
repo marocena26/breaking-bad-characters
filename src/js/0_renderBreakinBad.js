@@ -77,9 +77,16 @@ function handleClickFavourites(event) {
   
   const selectFavouriteObj = myCharactersList.find((eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id)); //find va a ir a cada objeto del array, me devolverá el primero que encuentre con ese id (el que tenga el objeto que he clicado).
   console.log(selectFavouriteObj); //NO FUNCIONA.
+  
+  const myFavouriteObj = myFavouritesList.find((eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id)); //find va a ir a cada objeto del array, me devolverá el primero que encuentre con ese id (el que tenga el objeto que he clicado).
+  console.log(myFavouriteObj); //NO FUNCIONA.
 
-  myFavouritesList.push(selectFavouriteObj); //añado al array vacío de favoritos el objeto que he seleccionado con el click.
+  if (!myFavouriteObj) {
+    myFavouritesList.push(selectFavouriteObj); //añado al array vacío de favoritos el objeto que he seleccionado con el click.
+  }
+  
   renderFavouritesList();
+  
 }
 
 //----CÓDIGO QUE SE EJECUTA AL CARGAR LA PÁGINA----//
