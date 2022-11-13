@@ -20,10 +20,20 @@ let filteredCharacters = [];
 //Función para pintar cada UNO de los elementos: cada personaje con su correspondiente foto, nombre y estado.
 
 function renderCharacter(character) {
+  const myFavouriteObj = myFavouritesList.findIndex((eachCharacter) =>  eachCharacter.char_id === parseInt(character.char_id));
+
+  let signFavourites = '';
+
+  if(myFavouriteObj === -1){
+    signFavourites = '';
+  } else {
+    signFavourites = 'selected';
+  }
+
   let liElement =
 
     `<li>
-    <article class="js__characters_article" id="${character.char_id}"> 
+    <article class="js__characters_article ${signFavourites}" id="${character.char_id}"> 
         <img src="${character.img}" alt="" class="characters__ul--img">
         <h3 class="characters__ul--name">${character.name}</h3>
         <p class="characters__ul--status">${character.status}</p>
@@ -89,13 +99,15 @@ function handleClickFavourites(event) {
   event.currentTarget.classList.toggle('selected');
   const selectFavouriteObj = myCharactersList.find((eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id));
   const myFavouriteObj = myFavouritesList.findIndex((eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id));
+  
   if (myFavouriteObj === -1) {
     myFavouritesList.push(selectFavouriteObj);
-    localStorage.setItem('myFavouritesList', JSON.stringify(myFavouritesList));
   } else {
     myFavouritesList.splice(myFavouriteObj, 1);
-    localStorage.setItem('myFavouritesList', JSON.stringify(myFavouritesList));
   }
+
+  localStorage.setItem('myFavouritesList', JSON.stringify(myFavouritesList));
+
   renderFavouritesList();
 }
 
