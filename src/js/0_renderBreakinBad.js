@@ -4,8 +4,8 @@
 
 const charactersList = document.querySelector('.js__characters');
 const favouritesList = document.querySelector('.js__favourites');
-const searchInput = document.querySelector('.js__search_input');
-const searchBtn = document.querySelector('.js__search_btn');
+//const searchInput = document.querySelector('.js__search_input');
+//const searchBtn = document.querySelector('.js__search_btn');
 
 //--------------------VARIABLES--------------------//
 
@@ -32,19 +32,6 @@ function renderCharacter(character) { //el parámetro 'character' obtiene la inf
   return liElement;
 }
 
-//Función para que pinte todos los elementos del array.
-function renderCharactersList () {
-  let liElement = '';
-
-  for (let i = 0; i < myCharactersList.length; i++) { ///i representa cada elemento del array, en este caso cada personaje con su información correspondiente.
-    liElement += renderCharacter(myCharactersList[i]);
-  }
-
-  charactersList.innerHTML = liElement; //Todo lo acumulado en la variable se pinta en mi array vacío de personajes.
-  selectFavouriteCharacters(); //Asigna el evento después de creear todos los elementos. 
-
-}
-
 //Función para asignar un evento a todos los elementos de mi página.
 function selectFavouriteCharacters() {
   const charactersArticle = document.querySelectorAll('.js__characters_article'); //Utilizamos querySelectorAll para coger todos los <article> de mi <ul>. Generamos un array de elementos.
@@ -55,17 +42,42 @@ function selectFavouriteCharacters() {
 }
 
 
+//Función para que pinte todos los elementos del array.
+function renderCharactersList () {
+  let liElement = '';
+
+  for (let i = 0; i < myCharactersList.length; i++) { ///i representa cada elemento del array, en este caso cada personaje con su información correspondiente.
+    liElement += renderCharacter(myCharactersList[i]);
+  }
+
+  charactersList.innerHTML = liElement; //Todo lo acumulado en la variable se pinta en mi array vacío de personajes.
+  selectFavouriteCharacters(); //Asigna el evento después de creear todos los elementos.
+
+}
+
+//Función que pinte los favoritos en pantalla.
+
+function renderFavouritesList () {
+  let liElement = '';
+
+  for (let i = 0; i < myFavouritesList.length; i++) { ///i representa cada elemento del array, en este caso cada personaje con su información correspondiente.
+    liElement += renderCharacter(myFavouritesList[i]);
+  }
+
+  favouritesList.innerHTML = liElement; //Todo lo acumulado en la variable se pinta en mi array vacío de personajes.
+}
+
+
 //---------------------EVENTOS---------------------//
 
 function handleClickFavourites(event) {
-  console.log('¡Has hecho cliiiick');
+  console.log('Prueba');
   event.currentTarget.classList.toggle('selected');
-  console.log( event.currentTarget.id);
-  myCharactersList.find((eachCharacter) => eachCharacter.id === event.currentTarget.id); //find va a ir a cada objeto del array, me devolverá el primero que encuentre con ese id (el que tenga el objeto que he clicado)
+  console.log(event.currentTarget.id);
+  const selectFavouriteObj = myCharactersList.find((eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id)); //find va a ir a cada objeto del array, me devolverá el primero que encuentre con ese id (el que tenga el objeto que he clicado).
+  console.log(selectFavouriteObj); //NO FUNCIONA.
 
- 
-
-
+  myFavouritesList.push(selectFavouriteObj); //añado al array vacío de favoritos el objeto que he seleccionado con el click.
 }
 
 //----CÓDIGO QUE SE EJECUTA AL CARGAR LA PÁGINA----//
@@ -77,4 +89,5 @@ fetch('https://breakingbadapi.com/api/characters')
   .then((jsonData) => {
     myCharactersList = jsonData; //Guardo la informacion que me da el JSON en mi variable global, en este array vacío se guardarán todos los elementos que he seleccionado de la API(foto, nombre y estado).
     renderCharactersList();//los mando pintar.
+    renderFavouritesList ();
   });
