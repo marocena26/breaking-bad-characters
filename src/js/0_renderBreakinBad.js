@@ -4,22 +4,23 @@
 
 const charactersList = document.querySelector('.js__characters');
 const favouritesList = document.querySelector('.js__favourites');
-//const searchInput = document.querySelector('.js__search_input');
-//const searchBtn = document.querySelector('.js__search_btn');
+const searchInput = document.querySelector('.js__search_input');
+const searchBtn = document.querySelector('.js__search_btn');
 
 //--------------------VARIABLES--------------------//
 
-let myCharactersList = []; //Array vacío. Necesitamos una variable (let) que guarde los datos que vamos a traernos de la API de BB.
+let myCharactersList = [];
 
-let myFavouritesList = []; //Array vacío. Necesitamos una variable (let) que guarde solo los datos en los que hayamos hecho click y que estén marcados como favoritos.
+let myFavouritesList = [];
+
+let filteredCharacters = [];
 
 //--------------------FUNCIONES--------------------//
 
 //Función para pintar cada UNO de los elementos: cada personaje con su correspondiente foto, nombre y estado.
 
-function renderCharacter(character) { //el parámetro 'character' obtiene la información de renderCharacter(myCharactersList[i]). Le pido que recorra el índice de cada uno de los elementos del array que estaba vacío y que llenamos con la información que nos da el servidor.
-
-  let liElement = //Variable vacía dónde voy a ir añadiendo todo lo que me devuelve la función.
+function renderCharacter(character) {
+  let liElement =
 
     `<li>
     <article class="js__characters_article" id="${character.char_id}"> 
@@ -34,10 +35,10 @@ function renderCharacter(character) { //el parámetro 'character' obtiene la inf
 
 //Función para asignar un evento a todos los elementos de mi página.
 function selectFavouriteCharacters() {
-  const charactersArticle = document.querySelectorAll('.js__characters_article'); //Utilizamos querySelectorAll para coger todos los <article> de mi <ul>. Generamos un array de elementos.
+  const charactersArticle = document.querySelectorAll('.js__characters_article');
 
-  for (const eachCharactersArticle of charactersArticle) { //Tenemos que hacer un bucle for para poder ponerle el evento a cada artículo, ya que no es posible ponerselo directamente a un array.
-    eachCharactersArticle.addEventListener('click', handleClickFavourites); //Escuchará el evento cuando haga click sobre un personaje.
+  for (const eachCharactersArticle of charactersArticle) { 
+    eachCharactersArticle.addEventListener('click', handleClickFavourites);
   }
 }
 
@@ -46,12 +47,12 @@ function selectFavouriteCharacters() {
 function renderCharactersList () {
   let liElement = '';
 
-  for (let i = 0; i < myCharactersList.length; i++) { ///i representa cada elemento del array, en este caso cada personaje con su información correspondiente.
+  for (let i = 0; i < myCharactersList.length; i++) {
     liElement += renderCharacter(myCharactersList[i]);
   }
 
-  charactersList.innerHTML = liElement; //Todo lo acumulado en la variable se pinta en mi array vacío de personajes.
-  selectFavouriteCharacters(); //Asigna el evento después de creear todos los elementos.
+  charactersList.innerHTML = liElement;
+  selectFavouriteCharacters();
 
 }
 
@@ -60,35 +61,49 @@ function renderCharactersList () {
 function renderFavouritesList () {
   let liElement = '';
 
-  for (let i = 0; i < myFavouritesList.length; i++) { ///i representa cada elemento del array, en este caso cada personaje con su información correspondiente.
+  for (let i = 0; i < myFavouritesList.length; i++) { 
     liElement += renderCharacter(myFavouritesList[i]);
   }
 
-  favouritesList.innerHTML = liElement; //Todo lo acumulado en la variable se pinta en mi array vacío de personajes.
+  favouritesList.innerHTML = liElement;
+}
+
+//Funcion pintar busqueda
+
+function renderFilteredCharacters () {
+  let liElement = '';
+
+  for (let i = 0; i < filteredCharacters.length; i++) { 
+    liElement += renderCharacter(filteredCharacters[i]);
+  }
+
+  charactersList.innerHTML = liElement;
 }
 
 
 //---------------------EVENTOS---------------------//
 
 function handleClickFavourites(event) {
-  console.log('Prueba');
   event.currentTarget.classList.toggle('selected');
-  console.log(event.currentTarget.id);
-  
-  const selectFavouriteObj = myCharactersList.find((eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id)); //find va a ir a cada objeto del array, me devolverá el primero que encuentre con ese id (el que tenga el objeto que he clicado).
-  console.log(selectFavouriteObj); //NO FUNCIONA.
-  
-  const myFavouriteObj = myFavouritesList.findIndex((eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id)); //find va a ir a cada objeto del array, me devolverá el primero que encuentre con ese id (el que tenga el objeto que he clicado).
-  console.log(myFavouriteObj); //NO FUNCIONA.
-
+  const selectFavouriteObj = myCharactersList.find((eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id));
+  const myFavouriteObj = myFavouritesList.findIndex((eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id));
   if (myFavouriteObj === -1) {
-    myFavouritesList.push(selectFavouriteObj); //añado al array vacío de favoritos el objeto que he seleccionado con el click.
+    myFavouritesList.push(selectFavouriteObj);
   } else {
     myFavouritesList.splice(myFavouriteObj, 1);
   }
-
   renderFavouritesList();
 }
+
+
+searchBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  const userSearch = searchInput.value.toLowerCase();
+  filteredCharacters = myCharactersList.filter((character) => character.name.toLowerCase().includes(userSearch)
+  );
+  renderFilteredCharacters ();
+});
+
 
 //----CÓDIGO QUE SE EJECUTA AL CARGAR LA PÁGINA----//
 
@@ -97,7 +112,6 @@ renderCharactersList();
 fetch('https://breakingbadapi.com/api/characters')
   .then((response) => response.json())
   .then((jsonData) => {
-    myCharactersList = jsonData; //Guardo la informacion que me da el JSON en mi variable global, en este array vacío se guardarán todos los elementos que he seleccionado de la API(foto, nombre y estado).
-    renderCharactersList();//los mando pintar.
-    renderFavouritesList ();
+    myCharactersList = jsonData;
+    renderCharactersList();
   });
