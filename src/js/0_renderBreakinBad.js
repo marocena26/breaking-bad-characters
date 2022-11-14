@@ -33,10 +33,10 @@ function renderCharacter(character) {
   let liElement =
 
     `<li>
-    <article class="js__characters_article ${signFavourites} characters__article" id="${character.char_id}"> 
-        <img src="${character.img}" alt="" class="characters__article--img">
-        <h3 class="characters__article--name">${character.name}</h3>
-        <p class="characters__article--status">${character.status}</p>
+    <article class="js__characters_article ${signFavourites} characters__article characters__favourites" id="${character.char_id}"> 
+        <img src="${character.img}" alt="" class="characters__article--img characters__favourites--img">
+        <h3 class="characters__article--name characters__favourites--name">${character.name}</h3>
+        <p class="characters__article--status characters__favourites--status">${character.status}</p>
     </article>
     </li>`;
 

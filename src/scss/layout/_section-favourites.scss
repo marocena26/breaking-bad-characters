@@ -4,6 +4,7 @@
     min-width: 30vw;
     flex-wrap: wrap;
     
+    
      &__title{
         text-align: center;
         color: $color-secondary;
@@ -21,11 +22,11 @@
      };
 }
 
-.characters__article {
+.characters__favourites {
     padding: 20px;
     margin: 10px;
     box-shadow: 3px 10px 5px $color-shadow;
-    gap: 10px;
+    cursor:pointer;
 
     &--img{
         width: 200px;
@@ -40,10 +41,4 @@
     &--status{
         color: $color-letters;
     };
-
 }
-
-
-// .hidden {
-//     display: none;
-// }
