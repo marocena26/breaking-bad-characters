@@ -5,22 +5,38 @@
     flex-wrap: wrap;
     
     
-     &__title{
+    &__title{
         text-align: center;
         color: $color-secondary;
         font-weight: 700;
         font-size: 20px;
-     };
+    };
 
-     &__ul{
+    &__ul{
         display: flex;
         width: 100%;
         flex-wrap: wrap;
         text-align: center;
         justify-content: center;
         align-items: flex-start;
-     };
-}
+    };
+
+    &__form{
+        text-align: center;
+        justify-content: center;
+
+        &--btn{font-family: $font-roboto;
+            color: $color-primary;
+            background-color: $color-secondary;
+            box-shadow: 3px 10px 5px $color-shadow;
+            padding: 5px 10px 5px 10px;
+            border: none;
+            cursor:pointer;
+            &:hover {
+                background-color: $color-hover;}
+        };
+
+    }
 
 .characters__favourites {
     padding: 20px;
@@ -32,17 +48,18 @@
         width: 200px;
         height: 300px;
         object-fit: cover;
-    }
+        };
     &--name{
         color: $color-letters;
         font-weight: 700;
         padding: 10px 0 15px 0;
-    };
+        };
     &--status{
         color: $color-letters;
+        };
     };
 }
 
 .hidden {
-    display: none;
-}
+     display: none;}
+    

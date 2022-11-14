@@ -7,6 +7,7 @@ const favouritesList = document.querySelector('.js__favourites');
 const searchInput = document.querySelector('.js__search_input');
 const sectionFavourites = document.querySelector('.js__favourites_section');
 const searchBtn = document.querySelector('.js__search_btn');
+const resetBtn = document.querySelector('.js__reset_btn');
 
 //--------------------VARIABLES--------------------//
 
@@ -119,6 +120,17 @@ function handleClickFavourites(event) {
   renderFavouritesList();
 }
 
+//Botón de reset
+
+function resetBtnClick(event) {
+  event.preventDefault();
+  myFavouritesList = [];
+  sectionFavourites.classList.add('hidden');
+  localStorage.removeItem('myFavouritesList');
+  renderCharactersList();
+}
+
+resetBtn.addEventListener('click', resetBtnClick);
 
 //Evento para buscar nombre del personaje.
 
@@ -129,6 +141,7 @@ searchBtn.addEventListener('click', (event) => {
   );
   renderFilteredCharacters ();
 });
+
 
 //----CÓDIGO QUE SE EJECUTA AL CARGAR LA PÁGINA----//
 
