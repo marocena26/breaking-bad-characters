@@ -28,16 +28,6 @@ function renderCharacter(character) {
   return liElement;
 }
 
-//Función para asignar un evento a todos los elementos de mi página.
-function selectFavouriteCharacters() {
-  const charactersArticle = document.querySelectorAll('.js__characters_article');
-
-  for (const eachCharactersArticle of charactersArticle) { 
-    eachCharactersArticle.addEventListener('click', handleClickFavourites);
-  }
-}
-
-
 //Función para que pinte todos los elementos del array.
 function renderCharactersList () {
   let liElement = '';
@@ -47,6 +37,16 @@ function renderCharactersList () {
   }
 
   charactersList.innerHTML = liElement;
-  selectFavouriteCharacters();
+  addListenerCharacters();
 
 }
+
+//Función para asignar un evento listener a todos los elementos de mi página.
+function addListenerCharacters() {
+  const charactersArticle = document.querySelectorAll('.js__characters_article');
+
+  for (const eachCharactersArticle of charactersArticle) { 
+    eachCharactersArticle.addEventListener('click', handleCharactersClic);
+  }
+}
+

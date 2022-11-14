@@ -12,8 +12,11 @@ fetch('https://breakingbadapi.com/api/characters')
     renderCharactersList();
   });
 
+const favouritesListLS = JSON.parse(localStorage.getItem('myFavouritesList'));
+
 if (favouritesListLS !== null) {
   myFavouritesList = favouritesListLS;
+  sectionFavourites.classList.remove('hidden');
   renderFavouritesList ();
 }
 

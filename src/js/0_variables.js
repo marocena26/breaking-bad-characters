@@ -15,8 +15,6 @@ let myCharactersList = [];
 
 let myFavouritesList = [];
 
-let favouritesListLS = JSON.parse(localStorage.getItem('myFavouritesList'));
-
 let filteredCharacters = [];
 
 
