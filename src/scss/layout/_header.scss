@@ -1,10 +1,45 @@
 .header {
-    &__img {
+    width: 100%;
+    height: 40vh;
+    background-image: url('../images/photo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 
-    }
     &__form{
+        background-color: $color-primary;
+        width: 920px;
+        height: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 3px 10px 10px rgba(44, 43, 43, 0.2);
+        position: relative;
+        top: 12%;
 
-        &--input{}
-        &--btn{}
+        &--input{
+            font-family: $font-roboto;
+            color: $color-letters;
+            border: 3px solid $color-secondary;
+            width: 800px;
+            padding: 2px;
+            cursor: text;
+        }
+
+        &--btn{
+            font-family: $font-roboto;
+            color: $color-primary;
+            background-color: $color-secondary;
+            margin-left: 10px;
+            padding: 5px;
+            border: none;
+            cursor:pointer;
+            &:hover {
+                background-color: $color-hover;
+              }
+        }
     }
 }
