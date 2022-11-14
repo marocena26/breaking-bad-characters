@@ -12,8 +12,8 @@ function renderFilteredCharacters () {
   }
 
   charactersList.innerHTML = liElement;
+  addListenerCharacters();
 }
-
 
 //---------------------EVENTOS---------------------//
 

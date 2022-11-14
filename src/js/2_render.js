@@ -28,6 +28,35 @@ function renderCharacter(character) {
   return liElement;
 }
 
+//Función render para favoritos
+
+function favouriteRender(character) {
+  const myFavouriteObj = myFavouritesList.findIndex((eachCharacter) =>  eachCharacter.char_id === parseInt(character.char_id));
+
+  let signFavourites = '';
+
+  if(myFavouriteObj === -1){
+    signFavourites = '';
+  } else {
+    signFavourites = 'selected';
+  }
+
+  let liElement =
+
+    `<li>
+    <article class="js__favourites_article ${signFavourites} characters__article characters__favourites remove" id="${character.char_id}">
+        <i class="pepito"></i>
+        <img src="${character.img}" alt="" class="characters__article--img characters__favourites--img">
+        <h3 class="characters__article--name characters__favourites--name">${character.name}</h3>
+        <p class="characters__article--status characters__favourites--status">${character.status}</p>
+    </article>
+    </li>`;
+
+  return liElement;
+}
+//a pepito le añado los eventos en vez de al articulo.
+
+
 //Función para que pinte todos los elementos del array.
 function renderCharactersList () {
   let liElement = '';
