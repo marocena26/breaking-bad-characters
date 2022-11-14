@@ -5,6 +5,7 @@
 const charactersList = document.querySelector('.js__characters');
 const favouritesList = document.querySelector('.js__favourites');
 const searchInput = document.querySelector('.js__search_input');
+const sectionFavourites = document.querySelector('.js__favourites_section');
 const searchBtn = document.querySelector('.js__search_btn');
 
 //--------------------VARIABLES--------------------//
@@ -33,7 +34,7 @@ function renderCharacter(character) {
   let liElement =
 
     `<li>
-    <article class="js__characters_article ${signFavourites} characters__article characters__favourites" id="${character.char_id}"> 
+    <article class="js__characters_article ${signFavourites} characters__article characters__favourites remove" id="${character.char_id}"> 
         <img src="${character.img}" alt="" class="characters__article--img characters__favourites--img">
         <h3 class="characters__article--name characters__favourites--name">${character.name}</h3>
         <p class="characters__article--status characters__favourites--status">${character.status}</p>
@@ -99,7 +100,7 @@ function handleClickFavourites(event) {
   event.currentTarget.classList.toggle('selected');
   const selectFavouriteObj = myCharactersList.find((eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id));
   const myFavouriteObj = myFavouritesList.findIndex((eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id));
-  
+
   if (myFavouriteObj === -1) {
     myFavouritesList.push(selectFavouriteObj);
   } else {
@@ -108,8 +109,16 @@ function handleClickFavourites(event) {
 
   localStorage.setItem('myFavouritesList', JSON.stringify(myFavouritesList));
 
+  if (myFavouritesList.length > 0){
+    sectionFavourites.classList.remove('hidden');
+    renderCharactersList();
+  } else {
+    sectionFavourites.classList.add('hidden');
+  }
+
   renderFavouritesList();
 }
+
 
 //Evento para buscar nombre del personaje.
 
