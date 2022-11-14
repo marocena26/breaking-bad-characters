@@ -6,6 +6,9 @@
     
      &__title{
         text-align: center;
+        color: $color-secondary;
+        font-weight: 700;
+        font-size: 20px;
      };
 
      &__ul{
@@ -15,27 +18,32 @@
         text-align: center;
         justify-content: center;
         align-items: flex-start;
+     };
+}
+
+.characters__article {
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 3px 10px 5px $color-shadow;
+    gap: 10px;
+
+    &--img{
+        width: 200px;
+        height: 300px;
+        object-fit: cover;
+    }
+    &--name{
+        color: $color-letters;
+        font-weight: 700;
+        padding: 10px 0 15px 0;
     };
+    &--status{
+        color: $color-letters;
+    };
+
 }
 
 
-//         &--img{
-//             width: 100%;
-//             height: 250px;
-//             object-fit: cover;
-//             display: flex;
-//             flex-direction: column;
-//             justify-content: center;
-//             align-items: center;
-//         };
-
-//         &--name{};
-
-//         &--status{};
-
-//      };
+// .hidden {
+//     display: none;
 // }
-
-.hidden {
-    display: none;
-}
