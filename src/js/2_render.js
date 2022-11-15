@@ -7,66 +7,54 @@
 function renderCharacter(character) {
   const myFavouriteObj = myFavouritesList.findIndex((eachCharacter) =>  eachCharacter.char_id === parseInt(character.char_id));
 
-  let signFavourites = '';
+  const liElement = document.createElement('li');
+  liElement.classList.add('characters__list_item');
 
-  if(myFavouriteObj === -1){
-    signFavourites = '';
-  } else {
-    signFavourites = 'selected';
+  const articleElement = document.createElement('article');
+  articleElement.classList.add('js__characters_article');
+  articleElement.classList.add('characters__article');
+  articleElement.classList.add('characters__favourites');
+  articleElement.classList.add('remove');
+
+  if(myFavouriteObj !== -1){
+    articleElement.classList.add('selected');
   }
 
-  let liElement =
+  articleElement.setAttribute('id',character.char_id);
 
-    `<li>
-    <article class="js__characters_article ${signFavourites} characters__article characters__favourites remove" id="${character.char_id}"> 
-        <img src="${character.img}" alt="" class="characters__article--img characters__favourites--img">
-        <h3 class="characters__article--name characters__favourites--name">${character.name}</h3>
-        <p class="characters__article--status characters__favourites--status">${character.status}</p>
-    </article>
-    </li>`;
+  const imgElement = document.createElement('img');
+  imgElement.classList.add('characters__article--img');
+  imgElement.classList.add('characters__favourites--img');
+  imgElement.setAttribute('src', character.img);
+  imgElement.setAttribute('alt', character.name);
 
+  const h2NameElement = document.createElement('h2');
+  h2NameElement.classList.add('characters__article--name');
+  h2NameElement.classList.add('characters__favourites--name');
+  const nameElement = document.createTextNode(character.name);
+  h2NameElement.appendChild(nameElement);
+
+  const statusElements= document.createElement('p');
+  statusElements.classList.add('characters__article--status');
+  statusElements.classList.add('characters__favourites--status');
+  const statusElement = document.createTextNode(character.status);
+  statusElements.appendChild(statusElement);
+
+  articleElement.appendChild(imgElement);
+  articleElement.appendChild(h2NameElement);
+  articleElement.appendChild(statusElements);
+  liElement.appendChild(articleElement);
   return liElement;
 }
-
-//Función render para favoritos
-
-function favouriteRender(character) {
-  const myFavouriteObj = myFavouritesList.findIndex((eachCharacter) =>  eachCharacter.char_id === parseInt(character.char_id));
-
-  let signFavourites = '';
-
-  if(myFavouriteObj === -1){
-    signFavourites = '';
-  } else {
-    signFavourites = 'selected';
-  }
-
-  let liElement =
-
-    `<li>
-    
-    <article class="js__favourites_article ${signFavourites} characters__article characters__favourites remove" id="${character.char_id}">
-        <div class="js__remove_crox characters__favourites--crox">X</div>
-        <img src="${character.img}" alt="" class="characters__article--img characters__favourites--img">
-        <h3 class="characters__article--name characters__favourites--name">${character.name}</h3>
-        <p class="characters__article--status characters__favourites--status">${character.status}</p>
-    </article>
-    </li>`;
-
-  return liElement;
-}
-//a pepito le añado los eventos en vez de al articulo.
-
 
 //Función para que pinte todos los elementos del array.
 function renderCharactersList () {
-  let liElement = '';
+  charactersList.innerHTML = '';
 
   for (let i = 0; i < myCharactersList.length; i++) {
-    liElement += renderCharacter(myCharactersList[i]);
+    charactersList.appendChild(renderCharacter(myCharactersList[i]));
   }
 
-  charactersList.innerHTML = liElement;
   addListenerCharacters();
 
 }
