@@ -2,7 +2,7 @@
 
 Trabajo realizado por la alumna María Elena Arocena López durante la evaluación final del Módulo 2: JS. 
 
-En este repositorio podreis encontrar los ficheros generados en la realización de la **Evaluación final del Módulo 1 - Promo Radia**. 
+En este repositorio podreis encontrar los ficheros generados en la realización de la **Evaluación final del Módulo 2 - Promo Radia**. 
 
 > **NOTA:** Enlace directo al poyecto pulsando **[aquí](https://beta.adalab.es/modulo-2-evaluacion-final-marocena26/)**
  
