@@ -98,13 +98,13 @@ function handleCharactersClic(event) {
 
 
 function handleFavoritesClick(event) {
-  event.currentTarget.classList.toggle('selected');
+  event.currentTarget.parentElement.classList.toggle('selected');
 
   const selectFavouriteObj = myCharactersList.find(
-    (eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id));
+    (eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.parentElement.id));
 
   const myFavouriteObj = myFavouritesList.findIndex(
-    (eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id)); 
+    (eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.parentElement.id));
 
   if (myFavouriteObj === -1) {
     myFavouritesList.push(selectFavouriteObj);
@@ -127,7 +127,7 @@ function handleFavoritesClick(event) {
 //Función para asignar un evento listener a todos los elementos favoritos de mi página.
 
 function addListenerFavourites() {
-  const charactersArticle = document.querySelectorAll('.js__favourites_article');
+  const charactersArticle = document.querySelectorAll('.js__remove_crox');
 
   for (const eachCharactersArticle of charactersArticle) { 
     eachCharactersArticle.addEventListener('click', handleFavoritesClick);
