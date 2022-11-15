@@ -12,7 +12,7 @@ function favouriteRender(character) {
   liElement.classList.add('characters__list_item');
 
   const articleElement = document.createElement('article');
-  articleElement.classList.add('js__characters_article');
+  articleElement.classList.add('js__favourites_article');
   articleElement.classList.add('characters__article');
   articleElement.classList.add('characters__favourites');
   articleElement.classList.add('remove');
@@ -70,10 +70,10 @@ function renderFavouritesList () {
 
 function handleCharactersClic(event) {
   event.currentTarget.classList.toggle('selected');
-  
+
   const selectFavouriteObj = myCharactersList.find(
     (eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id));
-  
+
   const myFavouriteObj = myFavouritesList.findIndex(
     (eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id));
 
@@ -98,13 +98,13 @@ function handleCharactersClic(event) {
 
 
 function handleFavoritesClick(event) {
-  event.currentTarget.classList.toggle('selected');//coger el parent.element. Tdoso los current
-  
+  event.currentTarget.classList.toggle('selected');
+
   const selectFavouriteObj = myCharactersList.find(
-    (eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id));//poner parent.element
-  
+    (eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id));
+
   const myFavouriteObj = myFavouritesList.findIndex(
-    (eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id)); //poner parent.element
+    (eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.id)); 
 
   if (myFavouriteObj === -1) {
     myFavouritesList.push(selectFavouriteObj);
@@ -127,7 +127,7 @@ function handleFavoritesClick(event) {
 //Función para asignar un evento listener a todos los elementos favoritos de mi página.
 
 function addListenerFavourites() {
-  const charactersArticle = document.querySelectorAll('.js__favourites_article');//añadir a pepito
+  const charactersArticle = document.querySelectorAll('.js__favourites_article');
 
   for (const eachCharactersArticle of charactersArticle) { 
     eachCharactersArticle.addEventListener('click', handleFavoritesClick);
