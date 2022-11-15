@@ -5,14 +5,13 @@
 //Funcion pintar busqueda
 
 function renderFilteredCharacters () {
-  let liElement = '';
+  charactersList.innerHTML = '';
 
   for (let i = 0; i < filteredCharacters.length; i++) { 
-    liElement += renderCharacter(filteredCharacters[i]);
+    charactersList.appendChild(renderCharacter(filteredCharacters[i]));
   }
-
-  charactersList.innerHTML = liElement;
   addListenerCharacters();
+
 }
 
 //---------------------EVENTOS---------------------//
