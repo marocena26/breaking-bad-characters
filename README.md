@@ -77,7 +77,7 @@ La usuaria puede indicar cuáles son sus personajes favoritos. Para ello, al hac
 - Mostrar un listado con los personajes favoritos. Os recomendamos crear un variable o constante de tipo array en JS para almacenar las personajes favoritos.
 - Los personajes favoritos deben seguir apareciendo en la página aunque la usuaria realice otra búsqueda.
 
-![image](https://user-images.githubusercontent.com/113302094/201793768-5d4af6f2-5118-453c-81ca-60b3ab9ea770.png)
+![image](https://user-images.githubusercontent.com/113302094/201897261-66236641-c867-49c8-acab-aeba180a404b.png)
 
 ### 5. Almacenamiento local
 Hay que almacenar el listado de favoritos en el localStorage. De esta forma, al recargar la página el listado de favoritos debe mostrarse.
@@ -91,6 +91,8 @@ Como bonus, os proponemos la opción de borrar favoritos. Al hacer clic sobre el
 Para terminar de rematar nuestra aplicación de BreakingBad, nos gustaría poder añadir/quitar como favorito al hacer click sobre un personaje. Y que, si realizamos una nueva búsqueda y sale un personaje que ya es favorito, aparezca resaltado en los resultados de búsqueda (con algún estilo de CSS).
 
 Y ya sería fantástico si al final de la lista de favoritos hay un botón para borrar todos los favoritos a la vez.
+
+![image](https://user-images.githubusercontent.com/113302094/201897457-8440055b-70dd-424f-a8e2-d5c16a81d51c.png)
 
 
 ### 7. BONUS: Afinar la maquetación
