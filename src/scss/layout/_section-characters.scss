@@ -4,28 +4,28 @@
     min-width: 70vw;
     flex-wrap: wrap;
     
-     &__title{
+    &__title{
         text-align: center;
         color: $color-secondary;
         font-weight: 700;
         font-size: 20px;
-     };
+    };
 
-     &__ul{
+    &__ul{
         display: flex;
         width: 100%;
         flex-wrap: wrap;
         text-align: center;
         justify-content: center;
         align-items: flex-start;
-     };
+    };
 }
 
 .characters__article {
     padding: 20px;
     margin: 10px;
     box-shadow: 3px 10px 5px $color-shadow;
-    gap: 10px;
+    border: 2px solid $color-secondary;
     cursor:pointer;
 
     &--img{
@@ -33,15 +33,16 @@
         height: 300px;
         object-fit: cover;
     }
+
     &--name{
         color: $color-letters;
         font-weight: 700;
         padding: 10px 0 15px 0;
     };
+
     &--status{
         color: $color-letters;
     };
-
 }
 
 .selected {

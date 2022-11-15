@@ -1,9 +1,9 @@
 .header {
     width: 100%;
-    height: 40vh;
-    background-image: url('../images/photo.jpg');
+    height: 60vh;
+    background-image: url('../images/background-img.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
@@ -16,7 +16,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        box-shadow: 3px 10px 10px $color-shadow;
+        box-shadow: $color-shadow-form 0px 18px 36px -18px;
         position: relative;
         top: 50%;
 
@@ -31,6 +31,7 @@
 
         &--btn{
             font-family: $font-roboto;
+            font-weight: 700;
             color: $color-primary;
             background-color: $color-secondary;
             margin-left: 10px;
@@ -39,6 +40,8 @@
             cursor:pointer;
             &:hover {
                 background-color: $color-hover;
+                color: $color-letters;
+                border: 2px solid $color-secondary;
               }
         }
     }
