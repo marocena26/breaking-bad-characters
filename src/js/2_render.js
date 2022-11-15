@@ -44,8 +44,9 @@ function favouriteRender(character) {
   let liElement =
 
     `<li>
+    
     <article class="js__favourites_article ${signFavourites} characters__article characters__favourites remove" id="${character.char_id}">
-        <i class="pepito"></i>
+        <div class="js__remove_crox characters__favourites--crox">X</div>
         <img src="${character.img}" alt="" class="characters__article--img characters__favourites--img">
         <h3 class="characters__article--name characters__favourites--name">${character.name}</h3>
         <p class="characters__article--status characters__favourites--status">${character.status}</p>

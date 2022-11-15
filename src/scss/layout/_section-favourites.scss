@@ -46,7 +46,18 @@
     padding: 20px;
     margin: 10px;
     box-shadow: 3px 10px 5px $color-shadow;
-    cursor:pointer;
+
+    &--crox{
+        background-color: $color-secondary;
+        font-size: 10px;
+        color: white;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        line-height: 25px;
+        transform: translate(-110%,-120%);
+        cursor:pointer;
+    }
 
     &--img{
         width: 200px;
