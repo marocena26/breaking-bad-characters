@@ -100,8 +100,12 @@ function handleCharactersClic(event) {
 function handleFavoritesClick(event) {
   event.currentTarget.parentElement.classList.toggle('selected');
 
+  console.log(event.currentTarget.parentElement);
+
   const selectFavouriteObj = myCharactersList.find(
     (eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.parentElement.id));
+
+  console.log(selectFavouriteObj.name);
 
   const myFavouriteObj = myFavouritesList.findIndex(
     (eachCharacter) =>  eachCharacter.char_id === parseInt(event.currentTarget.parentElement.id));

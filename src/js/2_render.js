@@ -34,6 +34,13 @@ function renderCharacter(character) {
   const nameElement = document.createTextNode(character.name);
   h2NameElement.appendChild(nameElement);
 
+  const birthdayElement = document.createElement('p');
+  const birthdayDate = document.createTextNode(character.birthday);
+
+  if (character.birthday !== 'Unknown' ){
+    birthdayElement.appendChild(birthdayDate);
+  }
+
   const statusElements= document.createElement('p');
   statusElements.classList.add('characters__article--status');
   statusElements.classList.add('characters__favourites--status');
@@ -42,6 +49,7 @@ function renderCharacter(character) {
 
   articleElement.appendChild(imgElement);
   articleElement.appendChild(h2NameElement);
+  articleElement.appendChild(birthdayElement);
   articleElement.appendChild(statusElements);
   liElement.appendChild(articleElement);
   return liElement;
