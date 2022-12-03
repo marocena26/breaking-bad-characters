@@ -54,9 +54,7 @@ function renderCharactersList () {
   for (let i = 0; i < myCharactersList.length; i++) {
     charactersList.appendChild(renderCharacter(myCharactersList[i]));
   }
-
   addListenerCharacters();
-
 }
 
 //Función para asignar un evento listener a todos los elementos de mi página.
