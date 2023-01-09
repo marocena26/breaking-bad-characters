@@ -17,15 +17,18 @@
     "dest": "public/assets/css/",
     "dist": "docs/assets/css/"
   },
+  "data": {
+    "src": "src/data/**.json",
+    "dest": "public/assets/data",
+    "dist": "docs/assets/data/"
+  },
   "html": {
     "src": "src/html/**.html",
     "dest": "public/",
     "dist": "docs/"
   },
   "js": {
-    "src": [
-      "src/js/**/*.js"
-    ],
+    "src": ["src/js/**/*.js"],
     "dest": "public/assets/js/",
     "dist": "docs/assets/js/"
   },
