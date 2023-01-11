@@ -1,105 +1,120 @@
-# Módulo 2: Ejercicio de evaluación final.
+# breaking-bad-characters
 
-Trabajo realizado por la alumna María Elena Arocena López durante la evaluación final del Módulo 2: JS. 
+## 🚀 Introduction
 
-En este repositorio podreis encontrar los ficheros generados en la realización de la **Evaluación final del Módulo 2 - Promo Radia**. 
+In this repository you can find the files generated in the **final evaluation of Module 2 - JS** within **[Adalab](https://adalab.es/)'s Web Development Bootcamp - Promo Radia**.
 
-> **NOTA:** Enlace directo al poyecto pulsando **[aquí](https://beta.adalab.es/modulo-2-evaluacion-final-marocena26/)**
- 
+The main objective is to create a **basic web application** with a series of functionalities regarding interactivity **with Javascript**.
 
-## Materiales utilizados: 
 
-Para llevar a cabo el desarrollo de este ejercicio se han empleado los siguientes materiales:
-- Creación de un repositorio desde **GitHub Classroom.**
-- Una **plantilla de proyecto con funcionalidades preinstaladas y preconfiguradas: el [Adalab - Web starter kit](https://github.com/Adalab/Adalab-web-starter-kit)**.
+> **NOTE:** Direct link to the project by clicking on the following **[link](https://marocena26.github.io/breaking-bad-characters/)**
 
-### Pasos que se han seguido para arrancar el proyecto:
+## 📝 Requirements
 
-1. **Creación del repositorio desde GitHub Classroom.**
-2. Descarga del **[Adalab - Web starter kit](https://github.com/Adalab/Adalab-web-starter-kit)**.
-3. **Copia de todos los ficheros** del Starter kit en la carpeta raíz del repositorio.
-4. Desde la carpeta raíz de tu repositorio **instalamos las dependencias** locales ejecutando en la terminal el comando:
+With a **'Adalab Web Starter Kit' template** as the starter point, the exercise consists on developing a web-site using the following **elements**:
+
+- **HTML 5**
+- **Sass**
+- **Flexbox and CSS Grid**
+- **Media queries**
+- **Javascript**
+- **Interactions with the user**
+
+The following **requirements** have to be respected:
+
+#### Design:
+
+Design with a basic structure made on a previously given model. It must have:
+- text input and search button to filter characters by their name.
+- as well as a list of articles with the photo, name and status of each character. 
+- additional favorites section should appear in the aside.
+
+#### Initial state:
+
+- When **loading the page**, all **characters** must **appear** in the main section, using an API request to obtain all the data. The URL for the request is **[The Breaking Bad API](https://breakingbadapi.com/)**. 
+- For **each character** obtained in the result, a card with the following information must be **rendered**: **photo**, **name** and **status** (dead or alive).
+
+#### Search input: 
+
+The user can **search characters by their name**, filling the input and clicking in the 'Search' button of the form, the application should only display those characters that match the search query.
+
+#### Favorites:
+
+The user can **designate favorite characters**. When doing so, the following steps must occur:
+- **Change styles of the selected character** card to show it has been tagged as favorite.
+- **Show a list of favorite characters** in the aside with different CSS styles.
+- The **favorite characters must continue to appear** even if the user executes a new search by name
+
+#### Local Storage: 
+
+All **characters tagged as favorite** must be **saved in localStorage**, so when the page is refreshed they do not disappear.
+
+#### Bonus
+
+- **Delete icon in favorites**. 
+- **Highlight favorites**. 
+- **General delete button**. 
+
+## 🛠️ Tools
+The project has been developed with **'Adalab Starter Kit'**, a framework created in node and gulp that has pre-installed and pre-configured functionalities. It also contains an **HTML template engine**, a **Sass preprocessor** and a local server, among other elements.
+
+The following tools have been used when solving the project:
+
+- **HTML** (with partials for an easier lecture and project organization)
+- **CSS/Sass**
+  - **Partials**
+  - **Variables, mixins and functions**
+  - **Flexbox**
+  - **CSS Grid**
+  - **Box model** (size, padding and margin)
+  - **Media queries**
+- **Javascript**
+  - **Partials**
+  - **Conditionals**
+  - **Events**
+  - **Functions**
+  - **Objects**
+  - **Arrays**
+  - **Loops**
+  - **API request**
+  - **Advanced DOM**
+- **GIT version control**
+
+## 💾 Steps to follow to use this project on your computer:
+
+> **NOTE:** This project has been carried out using **Adalab Starter Kit**.
+
+**First** of all, in order to have the repository on your computer:
+
+1. Click on the top right corner > **Fork**.
+2. It will ask you to choose which GitHub user you want to fork it to. **Choose your user**.
+3. **Go to github.com/your-user/name-of-project**, **clone it** and do whatever you want, you can rename the repo, change the code, redeploy it to GitHub Pages...
+4. **Finally** and for everything to work properly, **you must disable GitHub Pages and re-enable** it so that GitHub generates the new URL correctly.
+
+Once you have **done the fork**:
+
+1. Open it in your code editor.
+2. Open a terminal and **install the local dependencies** by executing in the command terminal. Here are the ones I used to start my project:
 
 ```bash
 npm install
 ```
 
-### Pasos para arrancar el proyecto:
-
-**El proyecto hay que arrancarlo cada vez que nos pongamoss a programar**, para ello ejecutaremos el comando:
+The project has to be **started** every time we start programming, to do this we will execute the **command**:
 
 ```bash
 npm start
 ```
+After running `npm start` we can start editing all the files inside the src/ folder and program comfortably 💫
 
-Este comando:
+## ✅ Final result
+<div id="header" align="center">
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/113302094/211929395-d67c075f-9598-4106-a43e-b33378509b6a.png">
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/113302094/211929525-a4d006a6-61a2-4c4f-bbce-9e29c5ae9098.png">
+</div>
 
-- **Abre una ventana de Chrome y muestra tu página web**, al igual que hace el plugin de VS Code Live Server (Go live).
-- También **observa** todos los ficheros que hay dentro de la carpeta `src/`, para que cada vez que modifiques un fichero **refresca tu página en Chrome**.
-- También **procesa los ficheros** HTML, SASS / CSS y JS y los **genera y guarda en la carpeta `public/`**. Por ejemplo:
-   - Convierte los ficheros SASS en CSS.
-   - Combina los diferentes ficheros de HTML y los agrupa en uno o varios ficheros HTML.
+## ✨ Feedback 
 
-Después de ejecutar `npm start` ya podemos empezar a editar todos los ficheros que están dentro de la carpeta `src/` y programar cómodamente.
+Any input is most welcome.
 
-## Enunciado del proyecto:
-
-El ejercicio consiste en desarrollar una aplicación web de Breaking Bad, que nos permite des/marcar los personajes como favoritas y guardarlas en local storage.
-El ejercicio también tiene una parte de maquetación con HTML y Sass, os recomendamos dedicar esfuerzo a la maquetación una vez terminada la parte de JavaScript, ya que los criterios de evaluación están relacionados con esta última.
-
-## Hitos a seguir durante el ejercicio:
-### 1. Estructura básica.
-La aplicación de búsqueda de serie constará de dos partes:
-1. Un campo de texto y un botón para buscar personajes por su título.
-2. Un listado donde aparece la foto del personaje, el nombre del personaje y si está vivo o muerto.
-
-![image](https://user-images.githubusercontent.com/113302094/201793524-dfaf392b-5a9c-4369-844f-dda7c0c28977.png)
-
-### 2. Inicio.
-- Al levantar la página debe mostrar todos los resultados de los personajes de la serie, la aplicación debe conectarse a **[The Breaking Bad API](https://breakingbadapi.com/)**. 
-- Por cada personaje obtenido en el resultado de la búsqueda hay que pintar una tarjeta donde mostramos la foto del personaje, el nombre del personaje y si está vivo o muerto.
-- Para pintar la información en la página se puede elegir entre hacerlo de forma básica con ```innerHTML``` o manipulando de forma avanzada el **DOM**.
-
-![image](https://user-images.githubusercontent.com/113302094/201793613-925d7a95-c9be-4a9e-8ea6-58ea5f9605ce.png)
-
-
-### 3. Búsqueda.
-La usuaria tiene la opción de buscar personajes por su nombre, al hacer clic sobre el botón de Buscar, la aplicación solo debe mostrar aquellos personajes que coinciden con la búsqueda realizada por la usuaria:
-- Puedes hacer un filtro por nombre sobre el listado de personajes obtenido anteriormente.
-- Puedes utilizarla siguiente url con el parámetro ```name``` para obtener del API solo los usuarios que coincidan con el nombre especificado por la usuaria: https://breakingbadapi.com/api/characters?name=Walter
-
-![image](https://user-images.githubusercontent.com/113302094/201793683-aca463c7-2c5b-4fad-a092-be67cde3762e.png)
-
-
-### 4. Favoritos.
-La usuaria puede indicar cuáles son sus personajes favoritos. Para ello, al hacer clic sobre un personaje debe pasar lo siguiente:
-- Cambiar los estilos de la tarjeta del personaje para indicar que es una personaje favorito.
-- Mostrar un listado con los personajes favoritos. Os recomendamos crear un variable o constante de tipo array en JS para almacenar las personajes favoritos.
-- Los personajes favoritos deben seguir apareciendo en la página aunque la usuaria realice otra búsqueda.
-
-![image](https://user-images.githubusercontent.com/113302094/201897261-66236641-c867-49c8-acab-aeba180a404b.png)
-
-### 5. Almacenamiento local
-Hay que almacenar el listado de favoritos en el localStorage. De esta forma, al recargar la página el listado de favoritos debe mostrarse.
-
-![image](https://user-images.githubusercontent.com/113302094/201793914-3e93d9e1-3da8-4c49-9210-08b5dcac5085.png)
-
-
-### 6. BONUS: Borrar favoritos
-Como bonus, os proponemos la opción de borrar favoritos. Al hacer clic sobre el icono de una 'x' al lado de cada favorito, hay que borrar el favorito clicado de la lista y del localStorage.
-
-Para terminar de rematar nuestra aplicación de BreakingBad, nos gustaría poder añadir/quitar como favorito al hacer click sobre un personaje. Y que, si realizamos una nueva búsqueda y sale un personaje que ya es favorito, aparezca resaltado en los resultados de búsqueda (con algún estilo de CSS).
-
-Y ya sería fantástico si al final de la lista de favoritos hay un botón para borrar todos los favoritos a la vez.
-
-![image](https://user-images.githubusercontent.com/113302094/201897457-8440055b-70dd-424f-a8e2-d5c16a81d51c.png)
-
-
-### 7. BONUS: Afinar la maquetación
-Una vez terminada la parte de interacción, podemos centrarnos en la parte de maquetación donde tenéis libertad para decidir los estilo.
-
-## Feedback
-
-Cualquier aportación será bien recibida. 
-
-¡Muchas gracias! 
+Thank you very much! 🤗
