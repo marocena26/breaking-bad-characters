@@ -1,4 +1,4 @@
-# breaking-bad-characters
+# Breaking Bad Characters ⚗️
 
 ## 🚀 Introduction
 
@@ -19,6 +19,8 @@ With a **'Adalab Web Starter Kit' template** as the starter point, the exercise 
 - **Media queries**
 - **Javascript**
 - **Interactions with the user**
+- **API request**
+
 
 The following **requirements** have to be respected:
 
@@ -78,6 +80,7 @@ The following tools have been used when solving the project:
   - **Loops**
   - **API request**
   - **Advanced DOM**
+  - **Routes and Links: SPA with react-router-dom**
 - **GIT version control**
 
 ## 💾 Steps to follow to use this project on your computer:
