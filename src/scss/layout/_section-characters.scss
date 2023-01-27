@@ -31,11 +31,16 @@
   width: 200px;
   height: 320px;
   box-shadow: 12px 17px 51px $color-shadow;
-  border: 2px solid $color-secondary;
+  border: 2px solid $color-primary;
   border-radius: 8%;
+  background-color: $color-background;
   cursor: pointer;
   &:hover {
     transform: scale(1.05);
+    border: 2px solid $color-secondary;
+  }
+  &:active {
+    transform: scale(0.95) rotateZ(1.7deg);
   }
 
   &--img {
@@ -43,6 +48,7 @@
     height: 200px;
     border-radius: 8%;
     object-fit: cover;
+    border: 2px solid $color-primary;
   }
 
   &--name {
