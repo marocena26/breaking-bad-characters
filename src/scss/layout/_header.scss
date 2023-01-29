@@ -11,7 +11,7 @@
 
   &__form {
     position: relative;
-    top: 10%;
+    top: 34px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,6 +22,14 @@
     width: 80%;
     height: 65px;
     border-radius: 30px;
+    @include tablet {
+      width: 60%;
+      gap: 20px;
+    }
+    @include desktop {
+      width: 40%;
+      gap: 80px;
+    }
     &--input {
       font-family: $font-roboto;
       color: $color-letters;
@@ -31,6 +39,12 @@
       padding: 4px;
       border-radius: 20px;
       cursor: text;
+      @include tablet {
+        width: 50%;
+      }
+      @include desktop {
+        width: 30%;
+      }
     }
     &--btn {
       font-family: $font-roboto;
@@ -42,6 +56,12 @@
       border: 2px solid $color-secondary;
       border-radius: 20px;
       cursor: pointer;
+      @include tablet {
+        width: 15%;
+      }
+      @include desktop {
+        width: 15%;
+      }
       &:hover {
         background-color: $color-hover;
         color: $color-letters;
@@ -49,44 +69,4 @@
       }
     }
   }
-
-  //
-  // }
-
-  // &__form {
-  //   background-color: $color-background;
-  //   width: 920px;
-  //   height: 90px;
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   box-shadow: $color-shadow-form 12px 17px 51px;
-  //   position: relative;
-  //   top: 50%;
-
-  //   &--input {
-  //     font-family: $font-roboto;
-  //     color: $color-letters;
-  //     border: 3px solid $color-secondary;
-  //     width: 800px;
-  //     padding: 4px;
-  //     cursor: text;
-  //   }
-
-  //   &--btn {
-  //     font-family: $font-roboto;
-  //     font-weight: 700;
-  //     color: $color-primary;
-  //     background-color: $color-secondary;
-  //     margin-left: 10px;
-  //     padding: 5px;
-  //     border: 2px solid $color-secondary;
-  //     cursor: pointer;
-  //     &:hover {
-  //       background-color: $color-hover;
-  //       color: $color-letters;
-  //       border: 2px solid $color-secondary;
-  //     }
-  //   }
-  // }
 }

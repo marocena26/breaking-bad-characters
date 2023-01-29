@@ -9,7 +9,7 @@
     color: $color-secondary;
     font-weight: 700;
     font-size: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   &__ul {
@@ -19,6 +19,7 @@
     text-align: center;
     justify-content: center;
     align-items: flex-start;
+    gap: 25px;
   }
 
   &__form {
@@ -28,12 +29,13 @@
     &--btn {
       font-family: $font-roboto;
       font-weight: 700;
+      width: 50%;
       color: $color-primary;
       background-color: $color-secondary;
-      box-shadow: 3px 10px 5px $color-shadow;
-      padding: 5px 10px 5px 10px;
-      margin: 20px;
-      border: none;
+      padding: 5px;
+      border: 2px solid $color-secondary;
+      border-radius: 20px;
+      margin-top: 25px;
       cursor: pointer;
       &:hover {
         background-color: $color-hover;
@@ -51,7 +53,6 @@
     width: 200px;
     height: 320px;
     box-shadow: 12px 17px 51px $color-shadow;
-    border: 2px solid $color-primary;
     border-radius: 8%;
 
     &:hover {

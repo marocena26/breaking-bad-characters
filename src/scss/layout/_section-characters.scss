@@ -9,17 +9,22 @@
     color: $color-secondary;
     font-weight: 700;
     font-size: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   &__ul {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    text-align: center;
+    display: grid;
+    grid-template-columns: auto;
     justify-content: center;
-    align-items: flex-start;
     gap: 25px;
+    @include tablet {
+      grid-template-columns: auto auto;
+      gap: 30px;
+    }
+    @include desktop {
+      grid-template-columns: auto auto auto;
+      gap: 60px;
+    }
   }
 }
 
@@ -37,7 +42,7 @@
   cursor: pointer;
   &:hover {
     transform: scale(1.05);
-    border: 2px solid $color-secondary;
+    border: 2px solid $color-shadow;
   }
   &:active {
     transform: scale(0.95) rotateZ(1.7deg);
@@ -48,7 +53,6 @@
     height: 200px;
     border-radius: 8%;
     object-fit: cover;
-    border: 2px solid $color-primary;
   }
 
   &--name {
@@ -62,5 +66,9 @@
 }
 
 .selected {
-  background-color: $color-hover;
+  background-color: $color-shadow;
+  border: 2px solid $color-shadow;
+  &:hover {
+    border: 2px solid $color-primary;
+  }
 }
