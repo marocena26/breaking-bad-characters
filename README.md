@@ -112,8 +112,7 @@ After running `npm start` we can start editing all the files inside the src/ fol
 
 ## ✅ Final result
 <div id="header" align="center">
-<img width="700" alt="image" src="https://user-images.githubusercontent.com/113302094/211929395-d67c075f-9598-4106-a43e-b33378509b6a.png">
-<img width="700" alt="image" src="https://user-images.githubusercontent.com/113302094/211929525-a4d006a6-61a2-4c4f-bbce-9e29c5ae9098.png">
+<img width="948" alt="image" src="https://user-images.githubusercontent.com/113302094/215362517-7ce416f1-f56d-4935-94d1-751636d217b6.png">
 </div>
 
 ## ✨ Feedback 
