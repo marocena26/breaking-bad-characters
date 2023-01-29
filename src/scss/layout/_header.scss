@@ -7,36 +7,40 @@
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 
   &__form {
-    background-color: $color-background;
-    width: 920px;
-    height: 90px;
+    position: relative;
+    top: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+    background-color: $color-background;
     box-shadow: $color-shadow-form 12px 17px 51px;
-    position: relative;
-    top: 50%;
-
+    border: 2px solid $color-shadow;
+    width: 80%;
+    height: 65px;
+    border-radius: 30px;
     &--input {
       font-family: $font-roboto;
       color: $color-letters;
-      border: 3px solid $color-secondary;
-      width: 800px;
+      background-color: $color-background;
+      border: 2px solid $color-shadow;
+      width: 60%;
       padding: 4px;
+      border-radius: 20px;
       cursor: text;
     }
-
     &--btn {
       font-family: $font-roboto;
       font-weight: 700;
+      width: 25%;
       color: $color-primary;
       background-color: $color-secondary;
-      margin-left: 10px;
       padding: 5px;
       border: 2px solid $color-secondary;
+      border-radius: 20px;
       cursor: pointer;
       &:hover {
         background-color: $color-hover;
@@ -45,4 +49,44 @@
       }
     }
   }
+
+  //
+  // }
+
+  // &__form {
+  //   background-color: $color-background;
+  //   width: 920px;
+  //   height: 90px;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   box-shadow: $color-shadow-form 12px 17px 51px;
+  //   position: relative;
+  //   top: 50%;
+
+  //   &--input {
+  //     font-family: $font-roboto;
+  //     color: $color-letters;
+  //     border: 3px solid $color-secondary;
+  //     width: 800px;
+  //     padding: 4px;
+  //     cursor: text;
+  //   }
+
+  //   &--btn {
+  //     font-family: $font-roboto;
+  //     font-weight: 700;
+  //     color: $color-primary;
+  //     background-color: $color-secondary;
+  //     margin-left: 10px;
+  //     padding: 5px;
+  //     border: 2px solid $color-secondary;
+  //     cursor: pointer;
+  //     &:hover {
+  //       background-color: $color-hover;
+  //       color: $color-letters;
+  //       border: 2px solid $color-secondary;
+  //     }
+  //   }
+  // }
 }
